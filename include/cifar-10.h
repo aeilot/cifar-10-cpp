@@ -113,7 +113,7 @@ namespace CIFAR_10 {
 
 		~CIFAR10_ANN() = default;
 
-		void train(int epochs = 10, double eps=1e-6) {
+		void train(int epochs = 50, double eps=1e-6) {
 			int total_train_samples = 0;
 			for (const auto& batch : dataset.trainBatches) {
 				total_train_samples += batch.images.size();
@@ -142,12 +142,12 @@ namespace CIFAR_10 {
 				}
 			}
 
-			cv::Mat layer_sizes = (cv::Mat_<int>(1, 4) << IMG_WIDTH * IMG_HEIGHT * IMG_CHANNELS, 512, 256, NUM_CLASSES);
+			cv::Mat layer_sizes = (cv::Mat_<int>(1, 4) << IMG_WIDTH * IMG_HEIGHT * IMG_CHANNELS, 256, 128, NUM_CLASSES);
 
 			ann->setLayerSizes(layer_sizes);
-			ann->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 1.0, 1.0);
+			ann->setActivationFunction(cv::ml::ANN_MLP::RELU);
 
-			ann->setTrainMethod(cv::ml::ANN_MLP::RPROP, 0.1);
+			ann->setTrainMethod(cv::ml::ANN_MLP::BACKPROP, 0.001, 0.1);
 			ann->setTermCriteria(cv::TermCriteria(cv::TermCriteria::MAX_ITER + cv::TermCriteria::EPS, epochs, eps));
 
 			cv::Ptr<cv::ml::TrainData> tdata = cv::ml::TrainData::create(train_data, cv::ml::ROW_SAMPLE, train_labels);
