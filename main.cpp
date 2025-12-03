@@ -21,6 +21,12 @@ int main() {
 
 		CIFAR_10::DataSet dataset(train_files, test_file);
 
+		CIFAR_10::CIFAR10_ANN ann(dataset);
+
+		ann.train(50, 1e-6);
+		ann.save(bathPath);
+		ann.predict();
+
 	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
