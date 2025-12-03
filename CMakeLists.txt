@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.0)
-project(CVNet)
+project(cifar-10-cpp)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -17,15 +17,15 @@ find_package(OpenCV REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-add_executable(CVNet main.cpp
+add_executable(cifar-10-cpp main.cpp
         include/cifar-10.h
 )
 
-add_executable(CVNet_test test.cpp
+add_executable(cifar-10-cpp_test test.cpp
         include/cifar-10.h
 )
 
-target_link_libraries(CVNet ${OpenCV_LIBS})
-target_link_libraries(CVNet_test ${OpenCV_LIBS}  GTest::gtest_main)
+target_link_libraries(cifar-10-cpp ${OpenCV_LIBS})
+target_link_libraries(cifar-10-cpp_test ${OpenCV_LIBS}  GTest::gtest_main)
 include(GoogleTest)
-gtest_discover_tests(CVNet_test)
+gtest_discover_tests(cifar-10-cpp_test)

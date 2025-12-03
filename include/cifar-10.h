@@ -111,7 +111,6 @@ namespace CIFAR_10 {
 			this->ann = cv::ml::ANN_MLP::create();
 		}
 
-		CIFAR10_ANN() = delete;
 		~CIFAR10_ANN() = default;
 
 		void train(int epochs = 10, double eps=1e-6) {
@@ -188,6 +187,10 @@ namespace CIFAR_10 {
 
 			double accuracy = static_cast<double>(correct) / num_test * 100.0;
 			std::cout << "Accuracy: " << accuracy << "%" << std::endl;
+		}
+
+		void load(std::string modelPath) {
+			ann = cv::ml::ANN_MLP::load(modelPath);
 		}
 
 		void save(std::string basePath) {

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "include/cifar-10.h"
 
-const std::string bathPath = "/Users/aeilot/Developer/CVNet/";
+const std::string bathPath = "/Users/aeilot/Developer/cifar-10-cpp/";
 
 int main() {
 	try {

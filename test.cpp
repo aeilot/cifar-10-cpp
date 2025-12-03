@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include "include/cifar-10.h"
 
-const std::string bathPath = "/Users/aeilot/Developer/CVNet/";
+const std::string bathPath = "/Users/aeilot/Developer/cifar-10-cpp/";
 
 TEST(DATA_LOADER_TEST, LoadCIFAR10Dataset) {
 	try {

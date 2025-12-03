@@ -1,10 +1,10 @@
-# CVNet
+# cifar-10-cpp
 
 A C++ implementation for CIFAR-10 image classification using OpenCV's Artificial Neural Network (ANN) module.
 
 ## Overview
 
-CVNet provides a simple and efficient way to load the CIFAR-10 dataset and train a Multi-Layer Perceptron (MLP) neural network for image classification. The project includes a custom CIFAR-10 data loader and an ANN implementation using OpenCV's machine learning library.
+cifar-10-cpp provides a simple and efficient way to load the CIFAR-10 dataset and train a Multi-Layer Perceptron (MLP) neural network for image classification. The project includes a custom CIFAR-10 data loader and an ANN implementation using OpenCV's machine learning library.
 
 ## Features
 
@@ -73,8 +73,8 @@ ann.save("./");
 
 The default neural network architecture consists of:
 - **Input Layer**: 3072 neurons (32×32×3 RGB image)
-- **Hidden Layer 1**: 256 neurons
-- **Hidden Layer 2**: 128 neurons
+- **Hidden Layer 1**: 512 neurons
+- **Hidden Layer 2**: 256 neurons
 - **Output Layer**: 10 neurons (one for each CIFAR-10 class)
 
 Activation function: Sigmoid Symmetric  
@@ -98,7 +98,7 @@ The dataset includes 10 classes:
 
 ```bash
 cd build
-./CVNet_test
+./cifar-10-cpp_test
 ```
 
 Or using CTest:
@@ -109,7 +109,7 @@ ctest --output-on-failure
 ## Project Structure
 
 ```
-CVNet/
+cifar-10-cpp/
 ├── include/
 │   └── cifar-10.h          # CIFAR-10 data loader and ANN implementation
 ├── cifar-10-batches-bin/   # Dataset directory
@@ -125,7 +125,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Chenluo Deng (Louis Deng)
+Louis Chenluo Deng
 
 ## Acknowledgments
 

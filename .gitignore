@@ -1,2 +1,25 @@
+# IDE files
 .idea/
-cmake-build-debug
+.vscode/
+*.swp
+*.swo
+*~
+
+# CMake files
+cmake-build-*/
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# Model files (optional - uncomment if you don't want to track models)
+# *.xml
