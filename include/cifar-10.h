@@ -143,7 +143,7 @@ namespace CIFAR_10 {
 				}
 			}
 
-			cv::Mat layer_sizes = (cv::Mat_<int>(1, 4) << IMG_WIDTH * IMG_HEIGHT * IMG_CHANNELS, 1024, 256, NUM_CLASSES);
+			cv::Mat layer_sizes = (cv::Mat_<int>(1, 4) << IMG_WIDTH * IMG_HEIGHT * IMG_CHANNELS, 512, 256, NUM_CLASSES);
 
 			ann->setLayerSizes(layer_sizes);
 			ann->setActivationFunction(cv::ml::ANN_MLP::SIGMOID_SYM, 1.0, 1.0);
